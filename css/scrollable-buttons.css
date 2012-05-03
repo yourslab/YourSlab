@@ -1,0 +1,74 @@
+
+/* this makes it possible to add next button beside scrollable */
+.scrollable {
+    float:left;
+}
+
+/* prev, next, prevPage and nextPage buttons */
+a.browse {
+    display:block;
+    cursor:pointer;
+    font-size:1px;
+}
+
+a.pos1{
+    background:url(../img/arrowleft.png) no-repeat;
+    position:absolute;
+    margin-left:-245px;
+    margin-top:2px;
+    width: 247px;
+    height: 119px;
+    -moz-border-top-left-radius:11px; 
+    -moz-border-bottom-left-radius:11px; 
+    -webkit-border-top-left-radius:11px; 
+    -webkit-border-bottom-left-radius:11px; 
+    border-top-left-radius:11px; 
+    border-bottom-left-radius:11px; 
+}
+
+a.pos2{
+    background:url(../img/arrowright.png) no-repeat;
+    position:absolute;
+    margin-left:797px;
+    margin-top:1px;
+    width: 128px;
+    height: 119px;
+    -moz-border-top-right-radius:11px; 
+    -moz-border-bottom-right-radius:11px; 
+    -webkit-border-top-right-radius:11px; 
+    -webkit-border-bottom-right-radius:11px; 
+    border-top-right-radius:11px; 
+    border-bottom-right-radius:11px; 
+}
+
+/* right */
+a.right:hover  {
+    -webkit-box-shadow:#666666 2em 0.1em 4em;
+    -moz-box-shadow:#666666 2em 0.1em 4em;
+    box-shadow:#666666 2em 0.1em 4em;
+    }
+a.right:active {
+    -webkit-box-shadow:black 2em 0.1em 4em;
+    -moz-box-shadow:black 2em 0.1em 4em;
+    box-shadow:black 2em 0.1em 4em;
+    }
+
+
+/* left */
+a.left:hover  {
+    -webkit-box-shadow:#666666 -2em 0.1em 4em;
+    -moz-box-shadow:#666666 -2em 0.1em 4em;
+    box-shadow:#666666 -2em 0.1em 4em;
+    }
+a.left:active {
+    -webkit-box-shadow:black -2em 0.1em 4em;
+    -moz-box-shadow:black -2em 0.1em 4em;
+    box-shadow:black -2em 0.1em 4em;
+    }
+
+/* up and down */
+a.up, a.down  {
+    background:url(http://jquerytools.org/media/img/scrollable/arrow/vert_large.png) no-repeat;
+    float: none;
+    margin: 10px 50px;
+}
