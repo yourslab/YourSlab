@@ -12,6 +12,12 @@ class User extends CI_Controller
                 if ($step == 1) {
                     $this->load->view('registration_step1');
                 }
+                if ($step == 2) {
+                    $this->load->view('registration_step2');
+                }
+                if ($step == 3) {
+                    $this->load->view('registration_step3');
+                }
             } else {
                 show_404();
             }

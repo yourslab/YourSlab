@@ -43,40 +43,40 @@
             <div class="mainbox">
             <div class="mainboxleft">
             <div class="stepbox">
-            <h1 style="margin-left: 194px;margin-top:15px; color:#3E7C25;">Step 1 <span class="fadedtext">&raquo; Step 2 &raquo; Step 3</span></h1>
+            <h1 style="margin-left: 194px;margin-top:15px;"><span class="fadedtext"><span class="darkenedtext">Step 1</span> &raquo; Step 2 &raquo; Step 3</span></h1>
             </div>
             <div class="row">
-            <center>
+            <div style="margin-left: 105px;">
             <form style="margin-top: 100px;" class="registerbox">
+            <center>
             <h2>User Info:</h2>
             <input type="text" placeholder="Username" style="height:35px; width: 300px;font-size:20px;"/> <br />
             <input type="text" placeholder="Email" style="height:35px; width: 300px;font-size:20px;"/><br />
             <input type="password" placeholder="Password" style="height:35px; width: 300px;font-size:20px;"/><br />
-            <input type="submit" class="btn btn-success" style="height:35px; width: 300px;font-size:20px;margin-bottom:5px;" value="Next &raquo;"/><br />
-            <button class="btn" style="height:35px; width: 300px;font-size:20px;">Cancel</button>
-            </form>
+            <input type="submit" class="btn btn-success" style="height:35px; width: 310px;font-size:20px;margin-bottom:5px;" value="Next &raquo;"/><br />
+            <button class="btn" style="height:35px; width: 310px;font-size:20px;">Cancel</button>
             </center>
+            </form>
+            </div>
             </div>
             </div>
             <div class="mainboxline">
-            <center style="padding-top:20px;">
+            <center style="padding-top:23px;">
             <h1 style="margin-bottom: 40px;">Step 1</h1>
-            <img src="<?php echo base_url(); ?>img/avatar.png" />
+            <img src="<?php echo base_url(); ?>img/avatar.png" width="197" height="197"/>
             <h2>Input your info</h2>
             </center>
             <div style="margin-top:20px;">
             <h4 style="margin-left: 33px;">Registration Progress:</h4>
             <div class="progress progress-success progress-striped active" style="width: 85%;margin-left:33px;margin-top:5px;">
-            <div class="bar" style="width: 33.3333%;"></div>
+            <div class="bar" style="width: 25%;"></div>
             </div>
             </div>
             </div>
             </div>
             </div>
             <div class="push"><!--//--></div>
-            </div>
-            <div class="push"></div>
-            </div>		
+            </div>	
 			<footer>
 				<div class="container">
 					Page loaded in
