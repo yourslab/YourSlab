@@ -62,7 +62,7 @@
 				<div class="row">
 					<div class="span2">
 						<p>
-							<a class="btn btn-warning btn-large signup" style="width:200px;height:50px;font-size:40px;" href="<?php echo base_url(); ?>user/register/1">Sign Up &raquo;</a>
+							<a class="btn btn-warning btn-large signup" style="width:200px;height:50px;font-size:40px;" href="<?php echo base_url(); ?>register/step1">Sign Up &raquo;</a>
 						</p>
 					</div>
 					<div class="span3 offset5">
