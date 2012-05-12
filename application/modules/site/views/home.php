@@ -14,6 +14,9 @@
 		<link href="<?php echo base_url(); ?>css/bootstrap-responsive.css" rel="stylesheet" />
 		<link href="<?php echo base_url(); ?>css/scrollable-horizontal.css" rel="stylesheet" />
 		<link href="<?php echo base_url(); ?>css/scrollable-buttons.css" rel="stylesheet" />
+        
+        <!-- Include Fonts here -->
+        <link href='http://fonts.googleapis.com/css?family=Contrail+One' rel='stylesheet' type='text/css' />
 		<!-- IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
@@ -55,7 +58,7 @@
 						<a class="btn btn-info btn-large signup" style="width:237px;height:35px;font-size:30px;overflow:hidden;margin-left:21px;">What are Slabs?</a>
 					</div>
 				</div>
-				<p class="caption" style="color: #eeeeee;">
+				<p class="caption" style="color: #eeeeee; font-family: 'Contrail One', Arial;">
 					YourSlab is a universal meeting place for all types of user-groups. Want to share something?
 					<span class="underlined">Login</span> or <span class="underlined">Signup</span> today.
 				</p>
