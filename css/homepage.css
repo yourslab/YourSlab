@@ -120,6 +120,14 @@ filter:progid:DXImageTransform.Microsoft.gradient( startColorstr= '#ffffff ',end
 box-shadow:#294707 0.05em 0.3em 1em;
 }
 
+.loading {
+background: url( '../img/loading.gif ') no-repeat 39px 40px;
+}
+
+.loading img {
+display:none;
+}
+
 .mainbox {
 padding:8px;
 height:450px;

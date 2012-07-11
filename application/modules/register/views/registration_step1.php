@@ -14,6 +14,8 @@
 		<link href="<?php echo base_url(); ?>css/bootstrap-responsive.css" rel="stylesheet" />
         <link href="<?php echo base_url(); ?>css/scrollable-horizontal.css" rel="stylesheet" />
         <link href="<?php echo base_url(); ?>css/scrollable-buttons.css" rel="stylesheet" />
+        <link href="<?php echo base_url(); ?>css/bvalidator.css" type="text/css" rel="stylesheet"/>
+        <link href="<?php echo base_url(); ?>css/bvalidator.theme.red.css" type="text/css" rel="stylesheet"/>
 		<!-- IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
@@ -47,16 +49,19 @@
             </div>
             <div class="row">
             <div style="margin-left: 105px;">
-            <form style="margin-top: 100px;" class="registerbox">
+            <?php
+            $attributes = array('style' => 'margin-top: 100px;', 'id' => 'userinfo', 'class' => 'registerbox');
+            echo form_open('register/step2', $attributes);
+            ?>
             <center>
             <h2>User Info:</h2>
-            <input type="text" placeholder="Username" style="height:35px; width: 300px;font-size:20px;"/> <br />
-            <input type="text" placeholder="Email" style="height:35px; width: 300px;font-size:20px;"/><br />
-            <input type="password" placeholder="Password" style="height:35px; width: 300px;font-size:20px;"/><br />
+            <input type="text" name="username" placeholder="Username" style="height:35px; width: 300px;font-size:20px;" data-bvalidator="required,minlength[5],maxlength[25],user_regex,user_taken" maxlength="25"/> <br />
+            <input type="text" name="email" placeholder="Email" style="height:35px; width: 300px;font-size:20px;" maxlength="256" data-bvalidator="required,email,maxlength[256],email_taken"/><br />
+            <input type="password" name="password" placeholder="Password" style="height:35px; width: 300px;font-size:20px;" data-bvalidator="required,minlength[5],maxlength[100],no_spaces" maxlength="300"/><br />
             <input type="submit" class="btn btn-success" style="height:35px; width: 310px;font-size:20px;margin-bottom:5px;" value="Next &raquo;"/><br />
-            <button class="btn" style="height:35px; width: 310px;font-size:20px;">Cancel</button>
-            </center>
             </form>
+            <button class="btn cancel" style="height:35px; width: 310px;font-size:20px;">Cancel</button>            
+            </center>
             </div>
             </div>
             </div>
@@ -87,16 +92,36 @@
 		<!-- /container -->
 		<!-- Insert javascript here==================================================-->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="<?php echo base_url(); ?>js/modernizr-2.5.3.js">
+		<script type="text/javascript">
+    	var base_url = '<?php echo base_url(); ?>';
 		</script>
-		<script src="<?php echo base_url(); ?>js/bootstrap.js">
+		<script src="<?php echo base_url(); ?>js/modernizr-2.5.3.js">
 		</script>
 		<script src="<?php echo base_url(); ?>js/jquery.js">
 		</script>
+		<script src="<?php echo base_url(); ?>js/bootstrap.js">
+		</script>
+		<script src="<?php echo base_url(); ?>js/register.js">      
+		</script>
 		<script src="<?php echo base_url(); ?>js/html5placeholder.jquery.js">
+		</script>
+		        <script src="<?php echo base_url(); ?>js/jquery.cookie.js">
+        
+        </script>
+		<script src="<?php echo base_url(); ?>js/jquery.bvalidator.js" type="text/javascript">
 		</script>
 		<script type="text/javascript">
 			$('input').placeholder();
 		</script>
+        <script type="text/javascript">
+        jQuery(document).ready(function(){
+        	var options = {
+        		classNamePrefix: 'bvalidator_red_'
+        	}
+        	$("#userinfo").bValidator(options);
+    	});
+        </script>
+        <!--<script src="<?php echo base_url(); ?>js/register.js">      
+		</script>-->
 	</body>
 </html>

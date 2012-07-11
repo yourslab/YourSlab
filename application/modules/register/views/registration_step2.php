@@ -15,6 +15,8 @@
         <link href="<?php echo base_url(); ?>css/scrollable-horizontal.css" rel="stylesheet" />
         <link href="<?php echo base_url(); ?>css/scrollable-buttons.css" rel="stylesheet" />
         <link href="<?php echo base_url(); ?>css/fileupload.css" rel="stylesheet" />
+        <link href="<?php echo base_url(); ?>css/bvalidator.css" type="text/css" rel="stylesheet"/>
+        <link href="<?php echo base_url(); ?>css/bvalidator.theme.red.css" type="text/css" rel="stylesheet"/>
 		<!-- IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
@@ -48,19 +50,24 @@
             </div>
             <div class="row">
             <div style="margin-left: 105px;">
-            <form style="margin-top: 100px;" class="registerbox">
+            <?php
+            $attributes = array('style' => 'margin-top: 100px;', 'class' => 'registerbox', 'id' => 'preregister');
+            echo form_open_multipart('register/step3', $attributes);
+            ?>
             <center>
             <h2>Profile Picture:</h2>
             </center>
             <div style="margin-left:50px;margin-bottom: 10px;">
-            <img src="<?php echo base_url(); ?>img/avatar.png" width="100" height="100"/>
+            <span id="preview">
+            <img src="<?php echo base_url(); ?>img/avatar.png" width="100px" height="100px" id="thumb"/>
+        	</span>
             <span class="file-wrapper">
-              <input type="file" name="photo" id="photo" />
+              <input type="file" name="photo" id="imageUpload" onchange="readURL(this);" data-bvalidator="image"/>
               <span class="button">Choose a Photo</span>
             </span>
             </div>
             <center>
-            <button class="btn btn-warning" style="height:35px; width: 300px;font-size:20px;margin-bottom:5px;">Skip &raquo;</button>
+            <button class="btn btn-warning" id="skipnext" style="height:35px; width: 300px;font-size:20px;margin-bottom:5px;">Skip &raquo;</button>
             <button class="btn" style="height:35px; width: 300px;font-size:20px;">&laquo; Back</button>
             </center>
             </form>
@@ -100,9 +107,35 @@
 		</script>
 		<script src="<?php echo base_url(); ?>js/jquery.js">
 		</script>
+		<script src="<?php echo base_url(); ?>js/ajaxupload.js">
+		</script>
+		<script type="text/javascript">   
+        function readURL(input) {
+            var imgfile = document.getElementById("imageUpload");
+            var imgname = imgfile.value;
+            var imgext = imgname.split('.').pop().toLowerCase();
+            if((imgext == 'jpg') || (imgext == 'jpeg') || (imgext == 'bmp') || (imgext == 'gif') || (imgext == 'png')) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#thumb').attr('src', e.target.result);
+                    $('#skipnext').attr('class', 'btn btn-success').html("Next &raquo;");
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                alert("Your browser does not support Javascript File API.");
+            }
+            } else {
+                $('#skipnext').attr('class', 'btn btn-warning').html("Skip &raquo;");
+                $('#thumb').attr('src', '<?php echo base_url(); ?>img/avatar.png');
+                alert("This file is not supported.");
+            }
+            }
+		</script>
 		<script src="<?php echo base_url(); ?>js/html5placeholder.jquery.js">
 		</script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>js/fileinput.js"></script>
 		<script type="text/javascript">
 			$('input').placeholder();
 		</script>
